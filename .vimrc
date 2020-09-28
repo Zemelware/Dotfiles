@@ -46,7 +46,6 @@ colorscheme onedark
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 map <C-_> <Plug>NERDCommenterToggle
-"nmap ghp <Plug>(GitGutterPreviewHunk)
 nnoremap ghp :call ToggleGitGutterPreviewHunk()<CR>
 inoremap jk <esc>
 inoremap kj <esc>
