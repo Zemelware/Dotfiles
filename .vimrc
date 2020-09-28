@@ -46,10 +46,36 @@ colorscheme onedark
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 map <C-_> <Plug>NERDCommenterToggle
+"nmap ghp <Plug>(GitGutterPreviewHunk)
+nnoremap ghp :call ToggleGitGutterPreviewHunk()<CR>
 inoremap jk <esc>
 inoremap kj <esc>
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+function! ToggleGitGutterPreviewHunk() abort
+    " Does nothing if that command doesn't exist
+    if !exists(':GitGutterPreviewHunk')
+	    return 0
+    endif
+
+    " Loop through all the windows in the current tab page
+    for win in range(1, winnr('$'))
+	    " Is it a preview window?
+	    let preview_window = getwinvar(win, '&previewwindow') ? win : 0
+    endfor
+
+    " We have a preview window
+    if preview_window > 0
+	    " Close the preview window
+	    pclose
+    " We don't have a preview window
+    else
+
+	    " Open the preview window
+	    GitGutterPreviewHunk
+    endif
+endfunction
 
 " Lightline config
 let g:lightline = {
