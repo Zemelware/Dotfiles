@@ -1,3 +1,6 @@
+# Set default editor
+export EDITOR=vim
+
 # Aliases
 
 # Navigation
@@ -9,6 +12,3 @@ alias .....="cd ../../../.."
 # Python
 alias python="python3"
 alias pip="pip3"
-
-# Set default editor
-export EDITOR=vim
