@@ -26,7 +26,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set number
-" set relativenumber
+set relativenumber
 set nowrap
 set cursorline
 set ignorecase
