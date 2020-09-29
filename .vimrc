@@ -33,8 +33,9 @@ set ignorecase
 set incsearch
 set splitbelow
 set termwinsize=10x0
-set wildmenu " For command completions
+set wildmenu
 set title
+set spell
 
 " set statusline=\ %<%f\ %h%m%r%{kite#statusline()}%=%l/%L\ \|\ %y\ 
 set laststatus=2 " always display the status line
