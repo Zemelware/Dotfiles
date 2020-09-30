@@ -4,6 +4,8 @@ export LSCOLORS=ExFxBxDxBxegedabagacad
 
 # Aliases
 
+alias grep="grep --color=auto"
+
 # ls variations
 alias ls="ls -GF"
 alias la="ls -AGF"
