@@ -1,5 +1,6 @@
 # Set default editor
 export EDITOR=vim
+export LSCOLORS=ExFxBxDxBxegedabagacad
 
 # Aliases
 
