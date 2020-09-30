@@ -3,6 +3,10 @@ export EDITOR=vim
 
 # Aliases
 
+alias ls="ls -GF"
+alias la="ls -AGF"
+alias ll="ls -alhGF"
+
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
