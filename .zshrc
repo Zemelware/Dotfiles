@@ -9,6 +9,7 @@ alias la="ls -AGF"
 alias ll="ls -alhGF"
 
 # Git
+alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
 alias gb="git branch"
