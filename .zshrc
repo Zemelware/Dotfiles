@@ -1,9 +1,13 @@
 # Set default editor
 export EDITOR=vim
+
+# Set up prompt color and ls colors (when you do the ls command)
 export LSCOLORS=ExFxBxDxBxegedabagacad
+export PS1="%F{196}%n%{$reset_color%}@%F{027}%m %F{yellow}%~ %{$reset_color%}}%% "
 
 # Aliases
 
+# Colorize grep
 alias grep="grep --color=auto"
 
 # ls variations
