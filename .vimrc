@@ -4,6 +4,7 @@ syntax on
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -32,10 +33,9 @@ set cursorline
 set ignorecase
 set incsearch
 set splitbelow
-set termwinsize=10x0
+set termwinsize=15x0
 set wildmenu
 set title
-set spell
 
 " set statusline=\ %<%f\ %h%m%r%{kite#statusline()}%=%l/%L\ \|\ %y\ 
 set laststatus=2 " always display the status line
@@ -77,6 +77,11 @@ function! ToggleGitGutterPreviewHunk() abort
     endif
 endfunction
 
+" Kite config
+let g:kite_tab_complete=1
+let g:kite_previous_placeholder="<C-H>"
+let g:kite_next_placeholder="<C-L>"
+
 " Lightline config
 let g:lightline = {
   \ 'colorscheme': 'onedark',
@@ -95,7 +100,6 @@ let g:lightline = {
 
 " coc config
 let g:coc_global_extensions = [
-  \ 'coc-pairs',
   \ 'coc-prettier',
   \ 'coc-snippets',
   \ 'coc-python',
