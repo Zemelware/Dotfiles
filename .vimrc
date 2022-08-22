@@ -46,6 +46,7 @@ set title
 set backspace=indent,eol,start
 set mouse=a
 set colorcolumn=80
+set scrolloff=10
 
 " set statusline=\ %<%f\ %h%m%r%{kite#statusline()}%=%l/%L\ \|\ %y\
 set laststatus=2 " always display the status line
