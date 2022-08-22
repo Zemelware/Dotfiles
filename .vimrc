@@ -1,3 +1,8 @@
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 filetype plugin on
 syntax on
 
@@ -22,6 +27,8 @@ Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
+colorscheme onedark
+
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -36,18 +43,24 @@ set splitbelow
 set termwinsize=15x0
 set wildmenu
 set title
+set backspace=indent,eol,start
+set mouse=a
+set colorcolumn=80
 
-" set statusline=\ %<%f\ %h%m%r%{kite#statusline()}%=%l/%L\ \|\ %y\ 
+" set statusline=\ %<%f\ %h%m%r%{kite#statusline()}%=%l/%L\ \|\ %y\
 set laststatus=2 " always display the status line
 
-set colorcolumn=100
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+" remove the background colour to use the terminal's background colour
+highlight Normal ctermbg=none
 
-colorscheme onedark
+highlight ColorColumn ctermbg=236
+highlight CursorLine ctermbg=236
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 map <C-_> <Plug>NERDCommenterToggle
 nnoremap ghp :call ToggleGitGutterPreviewHunk()<CR>
+
+" use j and k to get out of insert mode instead of escape
 inoremap jk <esc>
 inoremap kj <esc>
 
@@ -90,7 +103,7 @@ let g:lightline = {
   \             [ 'percent' ],
   \             [ 'kiteStatus', 'filetype' ] ],
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ] 
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ 'component': {
   \   'kiteStatus': '%{kite#statusline()}',
@@ -197,9 +210,9 @@ nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
-  " Setup formatexpr specified filetype(s).
+  "" Setup formatexpr specified filetype(s).
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
+  "" Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
